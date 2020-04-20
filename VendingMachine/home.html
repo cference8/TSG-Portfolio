@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+    Name: Christopher Ference
+    Date Created: 03/20/2020
+    Most recent revision: 03/20/2020
+-->
+<html lang="en">
+
+<head>
+    <title>Vending Machine</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="text-center">Chris's Vending Machine</h1>
+            <hr>
+        </header>
+        <div class="col-md-9">
+            <div class="row" id="itemButtons">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <h2 class="text-center">Total Money In</h2>
+                <div class="text-center">
+                    <input class="text-center" id="balance" placeholder="0.00" disabled><br><br>
+                    <button style="width:40%; margin:10px" id="btnAddDollar" onclick="addDollar()">Add dollar</button>
+                    <button style="width:40%" id="btnAddQuarter" onclick="addQuarter()">Add Quarter</button>
+                    <button style="width:40%; margin:10px" id="btnAddDime" onclick="addDime()">Add Dime</button>
+                    <button style="width:40%" id="btnAddNickle" onclick="addNickle()">Add Nickel</button>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <h2>Messages</h2>
+                    <input type="text" style="width:80%; height:50px" class="text-center" id="messages" disabled>
+                </div>
+                <br>
+                <div class="text-center">
+                    <label>Item:</label>
+                    <input id="itemInput" class="text-center" style="width:50%" disabled>
+                </div>
+                <br>
+                <div class="text-center">
+                    <button id="vendItem" style="width:75%">Make Purchase</button>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <h2>Change</h2>
+                    <input class="text-center" style="margin:10px" id="change" disabled>
+                <button id="btnChangeReturn" onclick="returnChange()">Change Return</button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
