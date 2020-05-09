@@ -14,8 +14,6 @@ import com.sg.flooringmastery.view.FlooringView;
 import com.sg.flooringmastery.view.FlooringViewException;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -121,7 +119,7 @@ public class FlooringController {
 
     }
 
-    private void removeOrder() throws FlooringDaoException, InvalidOrderNumber {
+    private void removeOrder() throws FlooringDaoException, InvalidOrderNumber, FlooringViewException {
         //1. Ask user for a date
         //2. Ask user for a orderNum
         //3. Get file by date
@@ -131,8 +129,11 @@ public class FlooringController {
 
         LocalDate date = view.getOrderByDate(); //by date
         int orderNum = view.getOrderByOrderNumber(); //by Order Number
-        Order toRemove = service.getOrder(date, orderNum);
-        view.displayOrderToRemove(toRemove);
+        Order toDelete = service.getOrder(date, orderNum);
+        Order toRemove = view.displayOrderToRemove(toDelete);
+        if(toRemove == null){
+            throw new FlooringViewException("---Order not removed---\n");
+        }
         service.deleteOrder(toRemove); //delete if yes
 
     }

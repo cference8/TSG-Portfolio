@@ -57,7 +57,7 @@ public class FlooringServiceLayer {
                 }
             }
             if (!containProduct) {
-                throw new FlooringProductTypeBadType("Product type does not exist");
+                throw new FlooringProductTypeBadType("Product type does not exist\n");
             }
         
         List<Taxes> tax = taxesDao.getAllTaxes();
@@ -97,13 +97,13 @@ public class FlooringServiceLayer {
         List<Taxes> tax = taxesDao.getAllTaxes();
 
         if (area.compareTo(min) >= 0 && area.compareTo(max) <= 0) {
-            //advanced forloop to get the taxes in the Taxes.txt file = order object state
+            
             for (Taxes t : tax) {
                 if (t.getState().equals(edited.getState())) {
                     taxRate = t.getTaxRate();
                 }
             }
-            //advanced forloop to get the productType in the product.txt file = order object productType
+           
             for (ProductInfo pi : products) {
                 if (pi.getProductType().equals(edited.getProductType())) {
                     BigDecimal matCostSqFt = (pi.getMaterialCostPerSquareFoot());

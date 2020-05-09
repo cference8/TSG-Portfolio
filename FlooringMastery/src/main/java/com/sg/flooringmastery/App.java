@@ -27,22 +27,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class App {
     public static void main(String[] args) {
-//        String orderPath = "Orders";
-//        
-//        
-//        UserIO myIo = new ConsoleIO();       
-//        FlooringView myView = new FlooringView(myIo);
-//       
-//        FlooringOrderDao myOrderDao = new FlooringOrderFileDao(orderPath);
-//        FlooringProductDao myProductDao = new FlooringProductFileDao("Products.txt");
-//        FlooringTaxesDao myTaxesDao = new FlooringTaxesFileDao("Taxes.txt");
-//        
-//        FlooringServiceLayer myService = new FlooringServiceLayer(myOrderDao, myProductDao, myTaxesDao);
-//                
-//        FlooringController controller = new FlooringController(myService, myView);
-//        
-//        controller.run();
-
+        
           ApplicationContext ctx
                 = new ClassPathXmlApplicationContext("applicationContext.xml");
         FlooringController controller

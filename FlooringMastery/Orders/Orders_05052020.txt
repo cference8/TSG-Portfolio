@@ -1,4 +1,2 @@
 OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
-1,Tyler,CA,25.00,Tile,249,3.50,4.15,871.50,1033.35,476.21,2381.06
-2,Chris,CA,25.00,Wood,249,5.15,4.75,1282.35,1182.75,616.28,3081.38
 3,chris,KK,0.00,Carpet,249,2.25,2.10,560.25,522.90,0.00,1083.15

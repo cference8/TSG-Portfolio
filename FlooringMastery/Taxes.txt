@@ -1,5 +1,6 @@
 State,StateName,TaxRate
 TX,Texas,4.45
+MN,Minnesota,8.02
 WA,Washington,9.25
 KY,Kentucky,6.00
 CA,Calfornia,25.00

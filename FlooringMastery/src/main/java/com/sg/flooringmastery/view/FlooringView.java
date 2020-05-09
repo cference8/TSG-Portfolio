@@ -33,7 +33,7 @@ public class FlooringView {
         io.print("* 6. Quit\n");
         io.print("*\n");
         io.print("* * * * * * * * * * * * * * * * * * * * * * * * * \n");
-        return io.readInt("Please select from the above choices.", 1, 6);
+        return io.readInt("Please select from the above choices.\n", 1, 6);
         
     }
 
@@ -43,11 +43,11 @@ public class FlooringView {
                     "Order Number: %s\n"
                             + "Customer Name: %s\n"
                             + "State: %s\n"
-                            + "TaxRate: %s\n"
-                            + "ProductType: %s\n"
+                            + "Tax Rate: %s\n"
+                            + "Product Type: %s\n"
                             + "Area: %s\n"
-                            + "CostPerSqFt: %s\n"
-                            + "LaborCostPerSqFt: %s\n"
+                            + "Material Cost: %s\n"
+                            + "Labor Cost: %s\n"
                             + "Material Cost: %s\n"
                             + "Labor Cost: %s\n"
                             + "Tax: %s\n"
@@ -71,7 +71,7 @@ public class FlooringView {
 
     public LocalDate askUserForDate() {
         
-        LocalDate toReturn = io.readLocalDate("Please enter date MMddyyyy.");
+        LocalDate toReturn = io.readLocalDate("Please enter valid date mm/dd/yyyy.");
         
         return toReturn;
     }
@@ -83,8 +83,7 @@ public class FlooringView {
         //Customer Name
         String customerName = io.readString("Please enter your name: ");
         //State
-        String state = io.readString("Please enter your State Abbreviation: ");
-            
+        String state = io.readString("Please enter your State Abbreviation: ");           
         //Product Type
         String productType = io.readString("Please enter product type: ");
         //Area
@@ -140,7 +139,16 @@ public class FlooringView {
         io.print("State: " + toRemove.getState() + "\n");
         io.print("Product Type: " + toRemove.getProductType() + "\n");
         
-        return toRemove;
+        String toDelete = io.readString("Are you sure you want to delete?(Y/N)");
+        
+        if(toDelete.substring(0).toUpperCase().equals("Y")){
+            io.print("Entered '" + toDelete + "' to successfully delete\n");
+            return toRemove;
+        } else{
+            return null;
+        }
+        
+        
         
     }
 
