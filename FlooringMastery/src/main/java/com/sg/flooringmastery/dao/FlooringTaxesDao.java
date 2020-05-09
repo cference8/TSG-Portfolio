@@ -13,9 +13,7 @@ import java.util.List;
  * @author board
  */
 public interface FlooringTaxesDao {
-    //DO NOT HARDCODE
-    //Dao is read only
-    
+    //Dao is read only 
     public List<Taxes> getAllTaxes() throws FlooringDaoException; 
     
     

@@ -13,7 +13,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -102,15 +101,8 @@ public class FlooringOrderFileDao implements FlooringOrderDao {
     }
 
     @Override
-
-    //INSTRUCTOR'S NOTE: refactor this method to take a LocalDate instead of the
-    //list of orders.  Use getAllOrdersByDate() to grab the list of orders
-    //for the supplied date
     public Order getOrder(LocalDate date, int orderNum) throws FlooringDaoException {
 
-        //INSTRUCTOR'S NOTE: this should really be initialized as null so that
-        //we don't end up producing an order object that "looks" real but doesn't
-        //actually have any fields set
         Order currentOrder = null;
 
         List<Order> allOrders = getAllOrdersByDate(date);
@@ -130,8 +122,6 @@ public class FlooringOrderFileDao implements FlooringOrderDao {
     }
 
     @Override
-    //INSTRUCTOR'S NOTE: the LocalDate parameter is redundant because the Order
-    //should already have a date.
     public void editOrder(Order edited) throws
             InvalidOrderNumber, FlooringDaoException {
 
@@ -173,10 +163,6 @@ public class FlooringOrderFileDao implements FlooringOrderDao {
     }
 
     @Override
-    //INSTRUCTOR'S NOTE: the orderNum parameter is redundant with the orderToDelete
-    //parameter (since the order object already has an order number).  Either
-    //remove orderNum or replace orderToDelete with a LocalDate (since the date
-    //and ordernumber are the unique indentifier for the order
     public void deleteOrder(Order orderToDelete) throws FlooringDaoException {
 
         LocalDate date = orderToDelete.getLocalDate();

@@ -5,7 +5,6 @@
  */
 package com.sg.flooringmastery.dao;
 
-import com.sg.flooringmastery.model.ProductInfo;
 import com.sg.flooringmastery.model.Taxes;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -20,7 +19,6 @@ import java.util.Scanner;
  * @author board
  */
 public class FlooringTaxesFileDao implements FlooringTaxesDao {
-    //DO NOT HARDCODE
     //Dao is read only
 
     String taxesPath;

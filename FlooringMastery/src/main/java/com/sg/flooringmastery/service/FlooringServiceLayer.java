@@ -13,13 +13,10 @@ import com.sg.flooringmastery.dao.InvalidOrderNumber;
 import com.sg.flooringmastery.model.Order;
 import com.sg.flooringmastery.model.ProductInfo;
 import com.sg.flooringmastery.model.Taxes;
-import com.sg.flooringmastery.view.FlooringViewException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *

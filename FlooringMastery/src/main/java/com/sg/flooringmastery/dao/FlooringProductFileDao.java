@@ -5,7 +5,6 @@
  */
 package com.sg.flooringmastery.dao;
 
-import com.sg.flooringmastery.model.Order;
 import com.sg.flooringmastery.model.ProductInfo;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -20,12 +19,9 @@ import java.util.Scanner;
  * @author board
  */
 public class FlooringProductFileDao implements FlooringProductDao {
-    //DO NOT HARDCODE
     //Dao is read only
-
     String productPath;
-
-
+    
     public FlooringProductFileDao(String productPath) {
         this.productPath = productPath;
     }

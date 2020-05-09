@@ -13,7 +13,6 @@ import java.util.List;
  * @author board
  */
 public interface FlooringProductDao {
-    //DO NOT HARDCODE
     //Dao is read only
     
     public List<ProductInfo> getAllProductInfo() throws FlooringDaoException;
