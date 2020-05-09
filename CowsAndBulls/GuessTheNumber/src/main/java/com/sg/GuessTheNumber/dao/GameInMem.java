@@ -51,10 +51,8 @@ public class GameInMem implements GtnGameDao {
         Game toAdd = new Game();
         
         int nextId = findNextId();
-
         toAdd.setId(nextId);
         toAdd.setTargetNumber(target);
-
         games.add(toAdd);
 
         return toAdd;

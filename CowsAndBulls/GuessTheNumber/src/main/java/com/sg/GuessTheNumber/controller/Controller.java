@@ -35,43 +35,32 @@ public class Controller {
 
     @PostMapping("/begin")
     @ResponseStatus(HttpStatus.CREATED)
-    public Game startGame() {
-        
+    public Game startGame() {       
         Game toReturn = service.startGame();
-
         return toReturn;
-
     }
 
     @PostMapping("/guess")
     public Round getGuess(@RequestBody GuessRequest request) throws NotUniqueNumberException, NumberOutOfBoundsException {
-
         Round toReturn = service.makeGuess(request.getGamesId(), request.getGuess());
-
         return toReturn;
     }
 
     @GetMapping("/game")
-    public List<Game> getAllGames() {
-        
+    public List<Game> getAllGames() {       
         List<Game> result = service.getAllGames();
-
         return result;
     }
 
     @GetMapping("/game/{gameId}")
-    public Game getGameById(@PathVariable Integer gameId) {
-        
-        Game toReturn = service.getGameById(gameId);
-        
+    public Game getGameById(@PathVariable Integer gameId) {      
+        Game toReturn = service.getGameById(gameId);       
         return toReturn;
     }
 
     @GetMapping("/rounds/{gameId}")
     public List<Round> getAllRoundsByTime(@PathVariable Integer gameId) {
-
         List<Round> toReturn = service.getAllRoundsById(gameId);
-
         return toReturn;
     }
 

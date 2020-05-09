@@ -69,13 +69,10 @@ public class ServiceLayer {
         }
 
         return toReturn;
-
     }
 
     public List<Round> getAllRoundsById(Integer gameId) {
-
         return roundDao.getAllRoundsById(gameId);
-
     }
 
     public Round makeGuess(Integer gameId, Integer guess) throws NotUniqueNumberException, NumberOutOfBoundsException{
@@ -141,7 +138,6 @@ public class ServiceLayer {
     }
 
     private boolean isUnique(int x) {
-
         // say x = 1234
         boolean unique = true;
 
@@ -187,10 +183,7 @@ public class ServiceLayer {
             int index = rng.nextInt(availableDigits.size());
             toReturn += availableDigits.get(index);
             availableDigits.remove(index);
-
         }
-
         return toReturn;
     }
-
 }

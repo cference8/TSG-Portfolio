@@ -73,17 +73,12 @@ public class App {
                 System.out.println("HUMAN WON MAJORITY OF THE ROUNDS!!");
                 
             } else if (roundsOfRps == roundCount && humanScore < compScore) {
-                System.out.println("COMPUTER WON MAJORITY OF THE ROUNDS!!");
-               
+                System.out.println("COMPUTER WON MAJORITY OF THE ROUNDS!!");              
             } else {
-                System.out.println("HUMAN TIED THE COMPUTER IN ALL ROUNDS!! GG ^_^");
-                
-            }
-            
+                System.out.println("HUMAN TIED THE COMPUTER OUT OF ALL ROUNDS!! GG ^_^");                
+            }           
             donePlaying = playAgain();
-        }
-        
-        
+        }       
     }
 
     public static int numberOfRounds() {
@@ -99,14 +94,11 @@ public class App {
         String humanChoice = "The cake is a lie";
 
         Scanner sc = new Scanner(System.in);
-
         do {
             System.out.println("Let's PLAY! ENTER: rock, paper, or scissors");
             humanChoice = sc.nextLine();
             System.out.println();
-
         } while (!getValidChoice(humanChoice));
-
         return humanChoice;
     }
 
@@ -125,7 +117,6 @@ public class App {
         if (compChoice == 3) {
             computer = "scissors";
         }
-
         return computer;
     }
 
@@ -143,7 +134,7 @@ public class App {
                 break;
             default:
                 valid = false;
-                System.out.println("INVALID ENTRY! Please only type: rock, paper or scissors");
+                System.out.println("INVALID ENTRY! Please only type: rock, paper, or scissors");
                 break;
         }
         return valid;
@@ -155,8 +146,7 @@ public class App {
         boolean donePlaying = true;
         System.out.println("Play Again? yes/no");
         playAgain = sc.nextLine();
-        while (donePlaying) {
-            
+        while (donePlaying) {           
              if (playAgain.equals("yes")) {
                 donePlaying = true;
                 break;
@@ -165,7 +155,6 @@ public class App {
                 System.out.println("Thanks for Playing!");
                 break;
             } 
-
         }
         return donePlaying;
     }

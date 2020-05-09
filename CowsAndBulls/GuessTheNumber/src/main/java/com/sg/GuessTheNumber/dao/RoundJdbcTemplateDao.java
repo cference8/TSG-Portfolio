@@ -62,12 +62,10 @@ public class RoundJdbcTemplateDao implements GtnRoundDao {
         toAdd.setRoundId(generatedId);
 
         return toAdd;
-
     }
 
     @Override
     public List<Round> getAllRoundsById(Integer gameId) {
-
         List<Round> toReturn = template.query("SELECT * FROM Rounds "
                 + "WHERE GamesId = ?", new RoundMapper(), gameId);
 
@@ -82,7 +80,7 @@ public class RoundJdbcTemplateDao implements GtnRoundDao {
     }
 
     private static final class RoundMapper implements RowMapper<Round> {
-
+        
         @Override
         public Round mapRow(ResultSet row, int i) throws SQLException {
 
@@ -96,9 +94,6 @@ public class RoundJdbcTemplateDao implements GtnRoundDao {
             converted.setGameId(row.getInt("GamesId"));
 
             return converted;
-
         }
-
     }
-
 }

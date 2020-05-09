@@ -30,17 +30,13 @@ public class GameJdbcTemplateDao implements GtnGameDao {
 
     @Override
     public List<Game> getAllGames() {
-
         List<Game> toReturn = template.query("SELECT * FROM Games", new GameMapper());
-
         return toReturn;
     }
 
     @Override
     public Game getGameById(Integer id) {
-
         Game toReturn = template.queryForObject("SELECT * FROM Games WHERE GamesId = ?", new GameMapper(), id);
-
         return toReturn;
     }
 
@@ -87,7 +83,6 @@ public class GameJdbcTemplateDao implements GtnGameDao {
 
         @Override
         public Game mapRow(ResultSet row, int i) throws SQLException {
-
             Game converted = new Game();
 
             converted.setId(row.getInt("GamesId"));
@@ -95,7 +90,6 @@ public class GameJdbcTemplateDao implements GtnGameDao {
             converted.setComplete(row.getBoolean("isComplete"));
 
             return converted;
-
         }
 
     }
