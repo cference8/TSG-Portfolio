@@ -23,7 +23,5 @@ public interface HeroDao {
     public Hero getHeroById(int id);
     
     public List<Hero> getAllHeroes();
-    
-    public List<Hero> getHeroesByLocation(Hero location);
        
 }

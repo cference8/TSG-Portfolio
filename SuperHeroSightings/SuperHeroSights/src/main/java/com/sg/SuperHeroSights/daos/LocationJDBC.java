@@ -5,7 +5,6 @@
  */
 package com.sg.SuperHeroSights.daos;
 
-import com.sg.SuperHeroSights.models.Hero;
 import com.sg.SuperHeroSights.models.Location;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -64,8 +63,7 @@ public class LocationJDBC implements LocationDao {
                 "UPDATE Locations SET name = ?, description = ?, address = ?, "
                         + "longitude = ?, latitude = ? WHERE locationId = ?"
                 , toEdit.getName(), toEdit.getDescription(), toEdit.getAddress()
-                , toEdit.getLongitude(), toEdit.getLatitude(), toEdit.getId());
-                
+                , toEdit.getLongitude(), toEdit.getLatitude(), toEdit.getId());               
     }
 
     @Override

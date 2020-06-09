@@ -26,7 +26,7 @@ public class Sighting {
     
     private List<Location> locationSighted;
     
-    private LocalDate dateSighted;
+    private String dateSighted;
 
     @Override
     public int hashCode() {
@@ -115,11 +115,11 @@ public class Sighting {
         this.locationSighted = locationSighted;
     }
 
-    public LocalDate getDateSighted() {
+    public String getDateSighted() {
         return dateSighted;
     }
 
-    public void setDateSighted(LocalDate dateSighted) {
+    public void setDateSighted(String dateSighted) {
         this.dateSighted = dateSighted;
     }
 

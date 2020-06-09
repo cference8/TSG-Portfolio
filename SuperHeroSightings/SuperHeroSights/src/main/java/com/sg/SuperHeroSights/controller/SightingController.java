@@ -9,7 +9,6 @@ import com.sg.SuperHeroSights.models.Hero;
 import com.sg.SuperHeroSights.models.Location;
 import com.sg.SuperHeroSights.models.Sighting;
 import com.sg.SuperHeroSights.service.ServiceLayer;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -45,18 +44,26 @@ public class SightingController {
     @PostMapping("addSighting")
     public String addSighting(Sighting toAdd, HttpServletRequest request) {
         
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-//        
-//        String heroId = request.getParameter("heroId");
-//        String locationId = request.getParameter("locationId");
-//        String date = request.getParameter("date");
-//            
-//        toAdd.getHero().setHeroId(Integer.parseInt(heroId));
-//        toAdd.getLocation().setId(Integer.parseInt(locationId));
-//        toAdd.setDateSighted(LocalDate.parse(date, formatter));
-//        service.addSighting(toAdd);
- 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        
+        String heroId = request.getParameter("heroId");
+        String locationId = request.getParameter("locationId");
+            
+        Hero hero = service.getHeroById(Integer.parseInt(heroId));
+        toAdd.setHero(hero);
+        Location location = service.getLocationById(Integer.parseInt(locationId));
+        toAdd.setLocation(location);
+        
+        service.addSighting(toAdd);
+
         return "redirect:/sighting";
         
+    }
+    
+    @GetMapping("editSighting")
+    public String displayEditSightingPage(Model m, Integer id){
+        Sighting toEdit = service.getSightingById(id);
+        m.addAttribute("sighting", toEdit);
+        return "sighting";
     }
 }

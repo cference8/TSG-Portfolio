@@ -47,4 +47,22 @@ public class LocationController {
         
         return "editLocation";
     }
+    
+    @PostMapping("editLocation")
+    public String editLocation(Location toEdit, HttpServletRequest request){
+        
+        int id = Integer.parseInt(request.getParameter("id"));
+        
+        toEdit.setId(id);
+                
+        service.editLocation(toEdit);
+        
+        return "redirect:/location";
+    }
+    
+    @GetMapping("deleteLocation")
+    public String deleteLocation(Integer id){
+        service.deleteLocationById(id);
+        return "redirect:/location";
+    }
 }

@@ -51,10 +51,9 @@ function loadItems() {
         success: function (items) {
             $.each(items, function (index, item) {
                 var itemSelect = '<button style="width: 32%; height: 200px" id="btnClick" onclick="selectedItem(' + item.id + ' )">';
-                itemSelect += 'Item Number: ' + item.id + '<br>';
-                itemSelect += 'name: ' + item.name + '<br>';
-                itemSelect += 'price: $' + item.price.toFixed(2) + '<br>';
-                itemSelect += 'qty: ' + item.quantity;
+                itemSelect += item.name + '<br>';
+                itemSelect += '$' + item.price.toFixed(2) + '<br>';
+                itemSelect += 'Stock: ' + item.quantity;
                 itemSelect += "</button>";
                 itemButtons.append(itemSelect);
 

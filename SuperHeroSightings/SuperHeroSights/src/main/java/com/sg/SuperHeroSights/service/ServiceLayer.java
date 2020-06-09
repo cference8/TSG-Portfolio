@@ -133,4 +133,18 @@ public class ServiceLayer {
         return sighting.getAllSightingsToDisplay();
     }
     
+    public void editSighting(Sighting toEdit) {
+        sighting.editSighting(toEdit);
+    }
+    
+    public void deleteSightingById(int id) {
+        sighting.deleteSightingById(id);
+    }
+    
+    public Sighting getSightingById(int id) {
+        return sighting.getSightingById(id);
+    }
+    
+    
+    
 }

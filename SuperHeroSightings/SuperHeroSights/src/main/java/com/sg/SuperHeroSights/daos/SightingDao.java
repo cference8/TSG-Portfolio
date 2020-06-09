@@ -21,7 +21,7 @@ public interface SightingDao {
     
     public void editSighting(Sighting toEdit);
     
-    public void deleteSighting(Sighting toDelete);
+    public void deleteSightingById(int id);
     
     public Sighting getSightingById(int id);
     

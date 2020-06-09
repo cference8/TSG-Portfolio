@@ -71,8 +71,8 @@
                             <label for="date" class="col-3 col-form-label">
                                 Date</label>
                             <div class="col-9">
-                                <input type="text" name="date" 
-                                       id="date" class="form-control" placeholder="MM/DD/YYYY"/>
+                                <input type="text" name="dateSighted" 
+                                       id="date" class="form-control" placeholder="YYYY/MM/DD"/>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Add Sighting</button>
@@ -95,8 +95,8 @@
                         <tbody>
                             <tr th:each="currentSighting : ${sightings}">
                                 <td th:text="${currentSighting.id}">Sighting ID</td>
-                                <td th:text="${currentSighting.heroId}">Hero Name</td>
-                                <td th:text="${currentSighting.locationId}">Location Name</td>
+                                <td th:text="${currentSighting.hero.name}">Hero Name</td>
+                                <td th:text="${currentSighting.location.name}">Location Name</td>
                                 <td th:text="${currentSighting.dateSighted}">Date</td>
                                 <td><a href="#" th:href="@{/editSighting(id=${currentSighting.id})}">Edit</a></td>
                                 <td><a href="#" th:href="@{/deleteSighting(id=${currentSighting.id})}">Delete</a></td>

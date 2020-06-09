@@ -2,8 +2,6 @@ DROP DATABASE IF EXISTS SuperHeroSightings;
 
 CREATE DATABASE SuperHeroSightings;
 
-USE SuperHeroSightings;
-
 CREATE TABLE SuperPowers (
 	SuperPowerId INT PRIMARY KEY auto_increment,
 	`name` varchar(50)

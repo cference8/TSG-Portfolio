@@ -92,11 +92,6 @@ public class HeroJDBC implements HeroDao {
         return toReturn;
     }
 
-    @Override
-    public List<Hero> getHeroesByLocation(Hero location) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private Superpower getSuperPowerForHero(int heroId) {
         return template.queryForObject("SELECT sp.* FROM superpowers sp JOIN heroes h ON h.superpowerId = sp.SuperPowerId WHERE h.heroId = ?", new SuperPowerMapper(), heroId);
     }
